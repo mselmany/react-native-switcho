@@ -1,6 +1,9 @@
 # @mselmany/react-native-switcho
 
-Universal animated (with `react-native-reanimated`) switcher ui element. Compatiple with ios, android, web - expo.
+Universal animated (with `react-native-reanimated`) switcher ui element. <br>
+Compatiple with **ios, android, web** - _expo_.
+
+<img src="https://github.com/mselmany/react-native-switcho/assets/1439466/1227c043-ec8e-481f-8a60-501b0ba35993" width="381" height="800" />
 
 ## Installation
 
