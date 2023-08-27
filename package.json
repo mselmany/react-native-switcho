@@ -1,6 +1,6 @@
 {
   "name": "@mselmany/react-native-switcho",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Universal animated switcher ui element. Compatiple with ios, android, web.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -49,7 +49,8 @@
   },
   "homepage": "https://github.com/mselmany/@mselmany/react-native-switcho#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
