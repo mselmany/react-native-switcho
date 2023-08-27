@@ -30,9 +30,9 @@ export default function App() {
       value={isToggled}
       onValueChange={onToggle}
       disabled={false} // optional: true | false
-      neutralColor="c8c8c8" // optional - default is #c8c8c8
-      positiveColor="27cc0d" // optional - default is #27cc0d
-      thumbColor="fff" // optional - default is #fff
+      neutralColor="#c8c8c8" // optional - default is #c8c8c8
+      positiveColor="#27cc0d" // optional - default is #27cc0d
+      thumbColor="#fff" // optional - default is #fff
       IconOff={<MaterialIcons name="close" size={70} />} // optional
       IconOn={<MaterialIcons name="check" size={70} />} // optional
     />
