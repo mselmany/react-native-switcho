@@ -1,12 +1,13 @@
 {
   "name": "@mselmany/react-native-switcho",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Universal animated switcher ui element. Compatiple with ios, android, web.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
   "react-native": "src/index",
   "source": "src/index",
+  "private": false,
   "files": [
     "src",
     "lib",
