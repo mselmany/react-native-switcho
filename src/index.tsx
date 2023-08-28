@@ -10,6 +10,7 @@ export type SwitcherProps = {
   value: boolean;
   onValueChange(value: boolean): void;
   size?: keyof typeof Sizes | number;
+  radius?: number;
   disabled?: boolean;
   neutralColor?: string;
   positiveColor?: string;
@@ -33,27 +34,42 @@ const defaults = {
   thumbColor: '#fff',
 };
 
+const THUMB_PADDING = 3;
+
+const radiusMap = {
+  0: 0,
+  1: 1,
+  2: 1,
+  3: 1,
+  4: 2,
+} as Record<number, number>;
+
 export const Switcher = memo((p: SwitcherProps) => {
   const options = useMemo(() => {
     const size =
       (typeof p.size === 'number' && p.size) ||
       (typeof p.size === 'string' && Sizes[p.size]) ||
       Sizes[defaults.size];
+    const radius = p.radius ?? size;
+    const thumbRadius = radiusMap[radius] ?? radius - THUMB_PADDING;
     return {
       ...defaults,
       ratioActive: defaults.ratio + defaults.ratio * 0.2,
       size,
+      radius,
+      thumbRadius,
       ...(p.neutralColor && { neutralColor: p.neutralColor }),
       ...(p.positiveColor && { positiveColor: p.positiveColor }),
       ...(p.thumbColor && { thumbColor: p.thumbColor }),
     };
-  }, [p.size, p.neutralColor, p.positiveColor, p.thumbColor]);
+  }, [p.size, p.neutralColor, p.positiveColor, p.thumbColor, p.radius]);
 
   const sizeValue = options.size;
   const isActive = p.value ?? false;
   const hasIcon = Boolean(p.IconOff && p.IconOn);
   const ratio = options.ratio;
   const ratioActive = options.ratioActive;
+  const borderRadius = options.radius;
 
   const isPressing = useSharedValue(false);
 
@@ -148,19 +164,39 @@ export const Switcher = memo((p: SwitcherProps) => {
   return (
     <AnimatedPressable
       {...p}
-      style={[styles.pressable, bgStyle]}
+      style={[styles.pressable, { borderRadius }, bgStyle]}
       onPressIn={onPressInOut(true)}
       onPressOut={onPressInOut(false)}
       onPress={() => p.onValueChange?.(!isActive)}
     >
       <Animated.View style={[styles.thumbWrapper, transformStyle]}>
-        <View style={[styles.thumb, { backgroundColor: options.thumbColor }]}>
+        <View
+          style={[
+            styles.thumb,
+            {
+              backgroundColor: options.thumbColor,
+              borderRadius: options.thumbRadius,
+            },
+          ]}
+        >
           {hasIcon && (
             <>
-              <Animated.View style={[styles.iconView, iconOffStyle]}>
+              <Animated.View
+                style={[
+                  styles.iconView,
+                  { borderRadius: options.thumbRadius },
+                  iconOffStyle,
+                ]}
+              >
                 {p.IconOff}
               </Animated.View>
-              <Animated.View style={[styles.iconView, iconOnStyle]}>
+              <Animated.View
+                style={[
+                  styles.iconView,
+                  { borderRadius: options.thumbRadius },
+                  iconOnStyle,
+                ]}
+              >
                 {p.IconOn}
               </Animated.View>
             </>
@@ -180,19 +216,17 @@ const styles = StyleSheet.create({
     position: 'relative',
     display: 'flex',
     flexDirection: 'row',
-    borderRadius: 500,
   },
   thumbWrapper: {
     position: 'relative',
     display: 'flex',
     flexDirection: 'row',
-    padding: 3,
+    padding: THUMB_PADDING,
   },
   thumb: {
     width: '100%',
     height: '100%',
     flexDirection: 'row',
-    borderRadius: 500,
     overflow: 'hidden',
   },
   iconView: {

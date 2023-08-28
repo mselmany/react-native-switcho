@@ -1,14 +1,18 @@
 # @mselmany/react-native-switcho
 
-Universal animated (with `react-native-reanimated`) switcher ui element. <br>
+Universal and animated switcher ui element. (with `react-native-reanimated`)<br>
 Compatiple with **ios, android, web** - _expo_.
 
-<img src="https://github.com/mselmany/react-native-switcho/assets/1439466/1227c043-ec8e-481f-8a60-501b0ba35993" width="381" height="800" />
+- All colors customizable
+- Supports optional icons (for on/off status)
+- 👀 Looks the same across all platforms 
+
+<img src="https://github.com/mselmany/react-native-switcho/assets/1439466/1227c043-ec8e-481f-8a60-501b0ba35993"  height="600" />
 
 ## Installation
 
 ```sh
-npm install @mselmany/react-native-switcho
+npm install --save @mselmany/react-native-switcho
 # or
 yarn add @mselmany/react-native-switcho
 ```
@@ -26,15 +30,16 @@ export default function App() {
 
   return (
     <Switcher
-      size="medium" // number(like 100) | xlarge | large | medium | small
       value={isToggled}
       onValueChange={onToggle}
+      size="medium" // number | xlarge | large | medium | small
+      radius={25} // optional - default is equals to size
       disabled={false} // optional: true | false
       neutralColor="#c8c8c8" // optional - default is #c8c8c8
       positiveColor="#27cc0d" // optional - default is #27cc0d
       thumbColor="#fff" // optional - default is #fff
-      IconOff={<MaterialIcons name="close" size={70} />} // optional
-      IconOn={<MaterialIcons name="check" size={70} />} // optional
+      IconOff={<MaterialIcons name="close" size={16} />} // optional
+      IconOn={<MaterialIcons name="check" size={16} />} // optional
     />
   );
 }

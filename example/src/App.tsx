@@ -10,15 +10,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
-        <Text>Custom size: 100</Text>
-        <Switcher
-          size={150}
-          value={isToggled}
-          onValueChange={onToggle}
-          IconOff={<MaterialIcons name="close" size={70} />}
-          IconOn={<MaterialIcons name="check" size={70} />}
-        />
-        <Text>Predefined size: xlarge and icons</Text>
+        <Text>Predefined size: xlarge & custom icons</Text>
         <Switcher
           size="xlarge"
           value={isToggled}
@@ -26,14 +18,39 @@ export default function App() {
           IconOff={<MaterialIcons name="gps-off" size={16} />}
           IconOn={<MaterialIcons name="gps-fixed" size={16} />}
         />
+
         <Text>Predefined size: large</Text>
         <Switcher size="large" value={isToggled} onValueChange={onToggle} />
+
         <Text>Predefined size: medium</Text>
         <Switcher value={isToggled} onValueChange={onToggle} />
+
         <Text>Predefined size: small</Text>
         <Switcher size="small" value={isToggled} onValueChange={onToggle} />
+
         <Text>disabled</Text>
-        <Switcher disabled value={isToggled} onValueChange={onToggle} />
+        <Switcher disabled value={false} onValueChange={onToggle} />
+
+        <Text>Custom size: 100</Text>
+        <Switcher size={100} value={isToggled} onValueChange={onToggle} />
+
+        <Text>Custom size: 50 and custom radius: 0</Text>
+        <Switcher
+          size={50}
+          radius={0}
+          value={isToggled}
+          onValueChange={onToggle}
+        />
+
+        <Text>Custom colors</Text>
+        <Switcher
+          size="large"
+          neutralColor="blue"
+          positiveColor="orange"
+          thumbColor="red"
+          value={isToggled}
+          onValueChange={onToggle}
+        />
       </View>
     </View>
   );
