@@ -41,13 +41,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/mselmany/@mselmany/react-native-switcho",
+  "repository": "https://github.com/mselmany/react-native-switcho",
   "author": "mselmany <mselmany@hotmail.com> (https://github.com/mselmany)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mselmany/@mselmany/react-native-switcho/issues"
+    "url": "https://github.com/mselmany/react-native-switcho/issues"
   },
-  "homepage": "https://github.com/mselmany/@mselmany/react-native-switcho#readme",
+  "homepage": "https://github.com/mselmany/react-native-switcho#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
