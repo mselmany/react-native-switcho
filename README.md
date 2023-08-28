@@ -1,6 +1,6 @@
 # @mselmany/react-native-switcho
 
-Universal and animated switcher ui element. (with `react-native-reanimated`)<br>
+Universal animated switcher ui element. (with `react-native-reanimated`)<br>
 Compatiple with **ios, android, web** - _expo_.
 
 - 🎨 All colors customizable
