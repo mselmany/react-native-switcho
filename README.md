@@ -3,11 +3,11 @@
 Universal and animated switcher ui element. (with `react-native-reanimated`)<br>
 Compatiple with **ios, android, web** - _expo_.
 
-- All colors customizable
+- 🎨 All colors customizable
 - Supports optional icons (for on/off status)
-- 👀 Looks the same across all platforms 
+- 👀 Looks the same across all platforms
 
-<img src="https://github.com/mselmany/react-native-switcho/assets/1439466/1227c043-ec8e-481f-8a60-501b0ba35993"  height="600" />
+[Example Video](https://github.com/mselmany/react-native-switcho/assets/1439466/294cd213-a48a-4bc4-82c3-daddb6f058bd)
 
 ## Installation
 
